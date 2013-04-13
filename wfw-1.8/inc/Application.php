@@ -20,7 +20,12 @@ class Application extends cApplication
         return parent::makeXMLView($filename,$attributes,$template_file);
     }
     
-    //surcharge makeXMLView avec les paramétres du template principale
+    /**
+     * Importe le contenu d'un document Doxygen dans la base de données
+     * @param XMLDocument $doc Document du fichier index.xml généré par Doxygen
+     * @param string $path Chemin d'accès au dossier contenant les fichiers XML de l'exporation Doxygen
+     * @return boolean Résultat de procédure
+     */
     public function libraryFromDoxygen($doc,$path)
     {
         $class     = $doc->all(">compound[kind=class]");
@@ -67,7 +72,13 @@ class Application extends cApplication
         return RESULT_OK();
     }
     
-    //
+    /**
+     * Importe une classe généré par Doxygen en base de données
+     * @param mixed $catalog Instance ou identifiant du catalogue (CatalogEntry)
+     * @param string $refid Identifiant de la classe (Doxygen)
+     * @param XMLDocument $doc Document du fichier XML généré par Doxygen
+     * @return boolean Résultat de procédure
+     */
     public function classFromDoxygen($catalog,$refid,$doc)
     {
         $classEl = $doc->one("compounddef[id=$refid]");
@@ -100,18 +111,16 @@ class Application extends cApplication
         return RESULT_OK();
     }
 
-    //
-    public function functionFromDoxygen($doc)
+    /**
+     * Importe une fonction généré par Doxygen en base de données
+     * @param mixed $catalog Instance ou identifiant du catalogue (CatalogEntry)
+     * @param string $refid Identifiant de la fonction (Doxygen)
+     * @param XMLDocument $doc Document du fichier XML généré par Doxygen
+     * @return boolean Résultat de procédure
+     */
+    public function functionFromDoxygen($catalog,$refid,$doc)
     {
-        //status de la base de données
-        $attributes["bdd_status"] = "Indisponible, vérifiez la configuration de l'application et l'installation de votre SGBD";
-        
-        if($this->getDB($db_iface)){
-            $attributes["bdd_status"] = $db_iface->getServiceProviderName();
-            $attributes["bdd_status"] .= " ( ".$this->getCfgValue("database", "name")." @ ".$this->getCfgValue("database", "server_adr")." : ".$this->getCfgValue("database", "port")." )";
-        }
-        
-        return parent::makeXMLView($filename,$attributes,$template_file);
+        return RESULT(cResult::Failed, cApplication::UnsuportedFeature);
     }
 }
 
