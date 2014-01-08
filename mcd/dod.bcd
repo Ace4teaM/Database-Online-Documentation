@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?PowerDesigner AppLocale="UTF16" ID="{35CFCF0B-7A13-44B9-9638-CF9C9FB53F95}" Label="" LastModificationDate="1365869431" Name="dod" Objects="144" Symbols="49" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" signature="CDM_DATA_MODEL_XML" version="15.1.0.2850"?>
+<?PowerDesigner AppLocale="UTF16" ID="{35CFCF0B-7A13-44B9-9638-CF9C9FB53F95}" Label="" LastModificationDate="1365869868" Name="dod" Objects="146" Symbols="49" Type="{1E597170-9350-11D1-AB3C-0020AF71E433}" signature="CDM_DATA_MODEL_XML" version="15.1.0.2850"?>
 <!-- Veuillez ne pas modifier ce fichier -->
 
 <Model xmlns:a="attribute" xmlns:c="collection" xmlns:o="object">
@@ -12,7 +12,7 @@
 <a:Code>DOD</a:Code>
 <a:CreationDate>1365837781</a:CreationDate>
 <a:Creator>developpement</a:Creator>
-<a:ModificationDate>1365869170</a:ModificationDate>
+<a:ModificationDate>1365869868</a:ModificationDate>
 <a:Modifier>developpement</a:Modifier>
 <a:PackageOptionsText>[FolderOptions]
 
@@ -2851,7 +2851,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:Code>GUID</a:Code>
 <a:CreationDate>1365837802</a:CreationDate>
 <a:Creator>developpement</a:Creator>
-<a:ModificationDate>1365868186</a:ModificationDate>
+<a:ModificationDate>1365869868</a:ModificationDate>
 <a:Modifier>developpement</a:Modifier>
 <c:Identifiers>
 <o:Identifier Id="o170">
@@ -2882,6 +2882,17 @@ Identifiers 0 Arial,8,N</a:FontList>
 <o:DataItem Ref="o172"/>
 </c:DataItem>
 </o:EntityAttribute>
+<o:EntityAttribute Id="o173">
+<a:ObjectID>C47C7FD3-E068-4DF5-AA01-632D636E5D45</a:ObjectID>
+<a:CreationDate>1365869837</a:CreationDate>
+<a:Creator>developpement</a:Creator>
+<a:ModificationDate>1365869868</a:ModificationDate>
+<a:Modifier>developpement</a:Modifier>
+<a:BaseAttribute.Mandatory>1</a:BaseAttribute.Mandatory>
+<c:DataItem>
+<o:DataItem Ref="o174"/>
+</c:DataItem>
+</o:EntityAttribute>
 </c:Attributes>
 </o:Entity>
 <o:Entity Id="o91">
@@ -2893,7 +2904,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1365837802</a:ModificationDate>
 <a:Modifier>developpement</a:Modifier>
 <c:Identifiers>
-<o:Identifier Id="o173">
+<o:Identifier Id="o175">
 <a:ObjectID>DBD4F52B-94C7-4DD5-A8A2-C1134509F26A</a:ObjectID>
 <a:Name>Identifiant_1</a:Name>
 <a:Code>IDENTIFIANT_1</a:Code>
@@ -2902,27 +2913,16 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1365837802</a:ModificationDate>
 <a:Modifier>developpement</a:Modifier>
 <c:Identifier.Attributes>
-<o:EntityAttribute Ref="o174"/>
+<o:EntityAttribute Ref="o176"/>
 </c:Identifier.Attributes>
 </o:Identifier>
 </c:Identifiers>
 <c:PrimaryIdentifier>
-<o:Identifier Ref="o173"/>
+<o:Identifier Ref="o175"/>
 </c:PrimaryIdentifier>
 <c:Attributes>
-<o:EntityAttribute Id="o174">
-<a:ObjectID>3561BD1A-D7A4-4D6D-BBE4-DC9C2B4DAA61</a:ObjectID>
-<a:CreationDate>1365837802</a:CreationDate>
-<a:Creator>developpement</a:Creator>
-<a:ModificationDate>1365837802</a:ModificationDate>
-<a:Modifier>developpement</a:Modifier>
-<a:BaseAttribute.Mandatory>1</a:BaseAttribute.Mandatory>
-<c:DataItem>
-<o:DataItem Ref="o175"/>
-</c:DataItem>
-</o:EntityAttribute>
 <o:EntityAttribute Id="o176">
-<a:ObjectID>B272F83B-7F04-41E2-A0A0-EBBA49A6D0F4</a:ObjectID>
+<a:ObjectID>3561BD1A-D7A4-4D6D-BBE4-DC9C2B4DAA61</a:ObjectID>
 <a:CreationDate>1365837802</a:CreationDate>
 <a:Creator>developpement</a:Creator>
 <a:ModificationDate>1365837802</a:ModificationDate>
@@ -2933,7 +2933,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 </c:DataItem>
 </o:EntityAttribute>
 <o:EntityAttribute Id="o178">
-<a:ObjectID>10E17E02-FEBF-484D-A6E3-BA7137E7A127</a:ObjectID>
+<a:ObjectID>B272F83B-7F04-41E2-A0A0-EBBA49A6D0F4</a:ObjectID>
 <a:CreationDate>1365837802</a:CreationDate>
 <a:Creator>developpement</a:Creator>
 <a:ModificationDate>1365837802</a:ModificationDate>
@@ -2941,6 +2941,17 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:BaseAttribute.Mandatory>1</a:BaseAttribute.Mandatory>
 <c:DataItem>
 <o:DataItem Ref="o179"/>
+</c:DataItem>
+</o:EntityAttribute>
+<o:EntityAttribute Id="o180">
+<a:ObjectID>10E17E02-FEBF-484D-A6E3-BA7137E7A127</a:ObjectID>
+<a:CreationDate>1365837802</a:CreationDate>
+<a:Creator>developpement</a:Creator>
+<a:ModificationDate>1365837802</a:ModificationDate>
+<a:Modifier>developpement</a:Modifier>
+<a:BaseAttribute.Mandatory>1</a:BaseAttribute.Mandatory>
+<c:DataItem>
+<o:DataItem Ref="o181"/>
 </c:DataItem>
 </o:EntityAttribute>
 </c:Attributes>
@@ -2954,7 +2965,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1365868260</a:ModificationDate>
 <a:Modifier>developpement</a:Modifier>
 <c:Identifiers>
-<o:Identifier Id="o180">
+<o:Identifier Id="o182">
 <a:ObjectID>F34CDA4B-3935-4FD4-BFB4-CCFBD421E8CC</a:ObjectID>
 <a:Name>Identifiant_1</a:Name>
 <a:Code>IDENTIFIANT_1</a:Code>
@@ -2963,15 +2974,15 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1365868260</a:ModificationDate>
 <a:Modifier>developpement</a:Modifier>
 <c:Identifier.Attributes>
-<o:EntityAttribute Ref="o181"/>
+<o:EntityAttribute Ref="o183"/>
 </c:Identifier.Attributes>
 </o:Identifier>
 </c:Identifiers>
 <c:PrimaryIdentifier>
-<o:Identifier Ref="o180"/>
+<o:Identifier Ref="o182"/>
 </c:PrimaryIdentifier>
 <c:Attributes>
-<o:EntityAttribute Id="o181">
+<o:EntityAttribute Id="o183">
 <a:ObjectID>B8694FCC-3956-4DDF-87F7-A1542CAEA101</a:ObjectID>
 <a:CreationDate>1365868238</a:CreationDate>
 <a:Creator>developpement</a:Creator>
@@ -2979,7 +2990,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:Modifier>developpement</a:Modifier>
 <a:BaseAttribute.Mandatory>1</a:BaseAttribute.Mandatory>
 <c:DataItem>
-<o:DataItem Ref="o182"/>
+<o:DataItem Ref="o184"/>
 </c:DataItem>
 </o:EntityAttribute>
 </c:Attributes>
@@ -2993,7 +3004,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1365869431</a:ModificationDate>
 <a:Modifier>developpement</a:Modifier>
 <c:Identifiers>
-<o:Identifier Id="o183">
+<o:Identifier Id="o185">
 <a:ObjectID>19196648-DF45-4FFE-926A-372064D24D54</a:ObjectID>
 <a:Name>Identifiant_1</a:Name>
 <a:Code>IDENTIFIANT_1</a:Code>
@@ -3002,15 +3013,15 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:ModificationDate>1365869163</a:ModificationDate>
 <a:Modifier>developpement</a:Modifier>
 <c:Identifier.Attributes>
-<o:EntityAttribute Ref="o184"/>
+<o:EntityAttribute Ref="o186"/>
 </c:Identifier.Attributes>
 </o:Identifier>
 </c:Identifiers>
 <c:PrimaryIdentifier>
-<o:Identifier Ref="o183"/>
+<o:Identifier Ref="o185"/>
 </c:PrimaryIdentifier>
 <c:Attributes>
-<o:EntityAttribute Id="o184">
+<o:EntityAttribute Id="o186">
 <a:ObjectID>420D3861-488E-48CE-B772-C43742D4570F</a:ObjectID>
 <a:CreationDate>1365869120</a:CreationDate>
 <a:Creator>developpement</a:Creator>
@@ -3018,10 +3029,10 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:Modifier>developpement</a:Modifier>
 <a:BaseAttribute.Mandatory>1</a:BaseAttribute.Mandatory>
 <c:DataItem>
-<o:DataItem Ref="o185"/>
+<o:DataItem Ref="o187"/>
 </c:DataItem>
 </o:EntityAttribute>
-<o:EntityAttribute Id="o186">
+<o:EntityAttribute Id="o188">
 <a:ObjectID>92A3C6DF-76F9-462C-B79B-A1087329FE09</a:ObjectID>
 <a:CreationDate>1365869120</a:CreationDate>
 <a:Creator>developpement</a:Creator>
@@ -3029,7 +3040,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:Modifier>developpement</a:Modifier>
 <a:BaseAttribute.Mandatory>1</a:BaseAttribute.Mandatory>
 <c:DataItem>
-<o:DataItem Ref="o187"/>
+<o:DataItem Ref="o189"/>
 </c:DataItem>
 </o:EntityAttribute>
 </c:Attributes>
@@ -3067,7 +3078,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 </o:Inheritance>
 </c:Inheritances>
 <c:DataItems>
-<o:DataItem Id="o179">
+<o:DataItem Id="o181">
 <a:ObjectID>D20CE196-A251-41C3-A727-39DEE64B0034</a:ObjectID>
 <a:Name>langage_name</a:Name>
 <a:Code>LANGAGE_NAME</a:Code>
@@ -3078,7 +3089,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:DataType>VA80</a:DataType>
 <a:Length>80</a:Length>
 </o:DataItem>
-<o:DataItem Id="o177">
+<o:DataItem Id="o179">
 <a:ObjectID>CEE57D0B-86F3-46C3-90A2-A1DBF14A867E</a:ObjectID>
 <a:Name>langage_code</a:Name>
 <a:Code>LANGAGE_CODE</a:Code>
@@ -3089,7 +3100,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:DataType>VA4</a:DataType>
 <a:Length>4</a:Length>
 </o:DataItem>
-<o:DataItem Id="o175">
+<o:DataItem Id="o177">
 <a:ObjectID>C1D40E00-3240-4F1C-9F82-73FE7B97D381</a:ObjectID>
 <a:Name>langage_id</a:Name>
 <a:Code>LANGAGE_ID</a:Code>
@@ -3101,14 +3112,13 @@ Identifiers 0 Arial,8,N</a:FontList>
 </o:DataItem>
 <o:DataItem Id="o172">
 <a:ObjectID>3F1FB830-7C37-4C95-9528-DC1EB74907D2</a:ObjectID>
-<a:Name>guid id</a:Name>
+<a:Name>guid_id</a:Name>
 <a:Code>GUID_ID</a:Code>
 <a:CreationDate>1365837802</a:CreationDate>
 <a:Creator>developpement</a:Creator>
-<a:ModificationDate>1365868186</a:ModificationDate>
+<a:ModificationDate>1365869868</a:ModificationDate>
 <a:Modifier>developpement</a:Modifier>
-<a:DataType>LVA1024</a:DataType>
-<a:Length>1024</a:Length>
+<a:DataType>I</a:DataType>
 </o:DataItem>
 <o:DataItem Id="o169">
 <a:ObjectID>5DB25176-D880-449B-8D69-73F097DAFFCF</a:ObjectID>
@@ -3303,7 +3313,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:DataType>VA30</a:DataType>
 <a:Length>30</a:Length>
 <c:Domain>
-<o:Domain Ref="o188"/>
+<o:Domain Ref="o190"/>
 </c:Domain>
 </o:DataItem>
 <o:DataItem Id="o114">
@@ -3340,7 +3350,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:DataType>VA30</a:DataType>
 <a:Length>30</a:Length>
 <c:Domain>
-<o:Domain Ref="o189"/>
+<o:Domain Ref="o191"/>
 </c:Domain>
 </o:DataItem>
 <o:DataItem Id="o107">
@@ -3395,7 +3405,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:Modifier>developpement</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o182">
+<o:DataItem Id="o184">
 <a:ObjectID>5C593102-4F73-4248-A252-BADEAE68838C</a:ObjectID>
 <a:Name>code_class_id</a:Name>
 <a:Code>CODE_CLASS_ID</a:Code>
@@ -3405,7 +3415,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:Modifier>developpement</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o185">
+<o:DataItem Id="o187">
 <a:ObjectID>0A837753-7EDB-4482-9691-091783371A93</a:ObjectID>
 <a:Name>source_file_id</a:Name>
 <a:Code>SOURCE_FILE_ID</a:Code>
@@ -3415,7 +3425,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:Modifier>developpement</a:Modifier>
 <a:DataType>I</a:DataType>
 </o:DataItem>
-<o:DataItem Id="o187">
+<o:DataItem Id="o189">
 <a:ObjectID>8CE951EE-17F4-4925-9F2F-26104244D3EF</a:ObjectID>
 <a:Name>filename</a:Name>
 <a:Code>FILENAME</a:Code>
@@ -3426,9 +3436,20 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:DataType>VA260</a:DataType>
 <a:Length>260</a:Length>
 </o:DataItem>
+<o:DataItem Id="o174">
+<a:ObjectID>7DE459B9-58FD-4CAD-824B-31B967323B3D</a:ObjectID>
+<a:Name>guid_value</a:Name>
+<a:Code>GUID_VALUE</a:Code>
+<a:CreationDate>1365869837</a:CreationDate>
+<a:Creator>developpement</a:Creator>
+<a:ModificationDate>1365869868</a:ModificationDate>
+<a:Modifier>developpement</a:Modifier>
+<a:DataType>VA260</a:DataType>
+<a:Length>260</a:Length>
+</o:DataItem>
 </c:DataItems>
 <c:Domains>
-<o:Domain Id="o188">
+<o:Domain Id="o190">
 <a:ObjectID>CC055E5A-652B-444E-809D-FF964E6377DB</a:ObjectID>
 <a:Name>catalog item type</a:Name>
 <a:Code>CATALOG_ITEM_TYPE</a:Code>
@@ -3441,7 +3462,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 <a:DataType>VA30</a:DataType>
 <a:Length>30</a:Length>
 </o:Domain>
-<o:Domain Id="o189">
+<o:Domain Id="o191">
 <a:ObjectID>A267580C-20D3-4736-AC00-6483867B2908</a:ObjectID>
 <a:Name>catalog type</a:Name>
 <a:Code>CATALOG_TYPE</a:Code>
@@ -3790,7 +3811,7 @@ Identifiers 0 Arial,8,N</a:FontList>
 </o:AssociationLink>
 </c:AssociationsLinks>
 <c:TargetModels>
-<o:TargetModel Id="o190">
+<o:TargetModel Id="o192">
 <a:ObjectID>D3BF7DBB-56E2-4F28-8CF1-F41F4A7611C7</a:ObjectID>
 <a:Name>dod</a:Name>
 <a:Code>DOD</a:Code>

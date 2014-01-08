@@ -15,109 +15,21 @@
     <meta name="Copyright" content="(C)2012-2013 Thomas AUGUEY" />
 
     <!-- FavIcon -->
-    <link rel="icon" type="image/png" href="-{image:icon}" />
-    <link rel="shortcut icon" type="image/x-icon" href="-{icon:favicon}" />
-
-    <!-- Main Styles -->
-    <link rel="stylesheet" href="-{_LIB_PATH_WFW_}/css/wfw-extends.css" type="text/css" />
-    <link rel="stylesheet" href="-{_LIB_PATH_WFW_}/css/wfw-fieldbar.css" type="text/css" />
-
-    <!-- Main Includes -->
-    <script type="text/javascript" language="javascript" src="-{_LIB_PATH_WFW_}/javascript/base.js"></script>
-    <script type="text/javascript" language="javascript" src="-{_LIB_PATH_YUI_}/yui/yui-min.js"></script>
-    <script type="text/javascript" language="javascript" src="-{_LIB_PATH_WFW_}/javascript/yui/yui_config.js"></script>
-    <script type="text/javascript">var wfw_yui_base_path = "-{_LIB_PATH_WFW_}/javascript/yui/";</script>
-
-    <!-- ExtJS -->
-    <script template:action="exists" template:name="_LIB_PATH_EXT_" type="text/javascript" language="javascript" src="-{_LIB_PATH_EXT_}/ext-all.js"></script>
-    <link template:action="exists" template:name="_LIB_PATH_EXT_" rel="stylesheet" type="text/css" href="-{_LIB_PATH_EXT_}/resources/css/ext-all.css" />
-    <script template:action="exists" template:name="_LIB_PATH_EXT_" type="text/javascript" language="javascript" src="-{_LIB_PATH_WFW_}/javascript/extjs/app.js"></script>
-    <script template:action="exists" template:name="_LIB_PATH_EXT_" type="text/javascript" language="javascript" src="-{_LIB_PATH_WFW_}/javascript/extjs/result.js"></script>
-    <script template:action="exists" template:name="_LIB_PATH_EXT_" type="text/javascript" language="javascript" src="-{_LIB_PATH_WFW_}/javascript/extjs/app.DataModel.js"></script>
-    <script template:action="exists" template:name="_LIB_PATH_EXT_" type="text/javascript" language="javascript" src="js/app.js"></script>
-
-    <!-- Result-box -->
-    <link rel="stylesheet" href="-{_LIB_PATH_WFW_}/css/result_box/style.css" type="text/css" />
-    <script type="text/javascript" language="javascript" src="-{_LIB_PATH_WFW_}/css/result_box/api.extjs.js"></script>
-
-    <!-- Add-Includes
-    <script type="text/javascript" language="javascript" src="js/user/user.js"></script>
-    <script type="text/javascript" language="javascript" src="js/globals.js"></script>
-    <script type="text/javascript" language="javascript" src="js/template.js"></script> -->
-
-    <style type="text/css">
-        #headerContent{
-            padding:10px;
-            font-weight: bold;
-            text-align: center;
-        }
-        #statusContent{
-            padding:20px;
-        }
-        #statusContent li strong{
-            width:150px;
-            display: inline-block;
-        }
-        #footerContent{
-            padding:10px;
-            font-style: italic;
-        }
-        #contentContent h1 {
-            margin-top:0px;
-            margin-bottom:4px;
-            font-size: 1.5em;
-        }
-        #contentContent h2 {
-            margin-top:8px;
-            margin-bottom:4px;
-            font-size: 1.1em;
-        }
-        strong {
-            font-weight: bold;
-        }
-    </style>
+    <link rel="icon" type="image/png" href="-{_LIB_PATH_WFW_}/bin/icons/logo_colors.ico" />
+    <link rel="shortcut icon" type="image/x-icon" href="-{_LIB_PATH_WFW_}/bin/icons/logo_colors.ico" />
+    
+    <!-- config scripts -->
+    <template:container template:action="select" template:path=":template.xml:">
+        <!-- javascript -->
+        <script template:action="all" template:selector="> scripts > *" type="text/javascript" src="-{__inner_text__}"></script>
+        <!-- stylesheet -->
+        <link template:action="all" template:selector="> stylesheet > *" rel="stylesheet" href="-{__inner_text__}" />
+    </template:container>
 </head>
 
 <!-- Document -->
 <body>
-    <div id="header">
-        <div id="headerContent">
-            <img src="-{_LIB_PATH_WFW_}/bin/logo.png" height="40" />
-            <hr/>
-            <span><a href="-{page:index}">Documentation Center</a></span>
-        </div>
-    </div>
-    <div id="status">
-        <div id="statusContent">
-            <ul>
-                <li><strong>Base de données</strong> : -{bdd_status}</li>
-            </ul>
-            
-        </div>
-    </div>
-    <div id="result" class="result">
-        <div class="-{result}">
-            <span class="ICON"></span>
-            <span class="TEXT"><span class="err">-{txt_error}</span><span class="msg">-{txt_message}</span></span>
-            
-        </div>
-    </div>
-    <div id="menu">
-        <!-- Administrateur -->
-        <ul id="menu1" template:action="select" template:path=":default.xml:index">
-            <li template:action="all" template:selector="> page[role=administrator]"><a href="-{{page:-{@id}}}">-{@name}</a></li>
-        </ul>
-        <!-- Visiteur -->
-        <ul id="menu2" template:action="select" template:path=":default.xml:index">
-            <li template:action="all" template:selector="> page[role=visitor]"><a href="-{{page:-{@id}}}">-{@name}</a></li>
-        </ul>
-        <!-- Utilisateur -->
-        <ul id="menu3" template:action="select" template:path=":default.xml:index">
-            <li template:action="all" template:selector="> page[role=user]"><a href="-{{page:-{@id}}}">-{@name}</a></li>
-        </ul>
-    </div>
     <div id="content" template:action="merge" template:path=">body"></div>
-    <div id="footer" class="wfw_information"><div id="footerContent"></div></div>
 </body>
 
 
