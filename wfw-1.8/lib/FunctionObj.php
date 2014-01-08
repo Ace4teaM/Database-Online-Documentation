@@ -52,7 +52,12 @@ class FunctionObj
     /**
     * @var      String
     */
-    public $desc;    
+    public $desc;
+    
+    /**
+    * @var      String
+    */
+    public $returnType;    
 
 }
 
@@ -74,7 +79,8 @@ class FunctionObjMgr
         
         $node->appendChild($doc->createTextElement("function_obj_id",$inst->functionObjId));
         $node->appendChild($doc->createTextElement("name",$inst->name));
-        $node->appendChild($doc->createTextElement("desc",$inst->desc));       
+        $node->appendChild($doc->createTextElement("desc",$inst->desc));
+        $node->appendChild($doc->createTextElement("return_type",$inst->returnType));       
 
           
         return $node;
@@ -121,7 +127,8 @@ class FunctionObjMgr
     public static function bindResult(&$inst,$result){
           $inst->functionObjId = $result->fetchValue("function_obj_id");
           $inst->name = $result->fetchValue("name");
-          $inst->desc = $result->fetchValue("desc");          
+          $inst->desc = $result->fetchValue("desc");
+          $inst->returnType = $result->fetchValue("return_type");          
 
        return true;
     }
@@ -199,6 +206,7 @@ class FunctionObjMgr
        $query .= " function_obj_id,";
        $query .= " name,";
        $query .= " desc,";
+       $query .= " return_type,";
        if(is_array($add_fields))
            $query .= implode(',',array_keys($add_fields)).',';
        $query = substr($query,0,-1);//remove last ','
@@ -208,6 +216,7 @@ class FunctionObjMgr
        $query .= $db->parseValue($inst->functionObjId).",";
        $query .= $db->parseValue($inst->name).",";
        $query .= $db->parseValue($inst->desc).",";
+       $query .= $db->parseValue($inst->returnType).",";
        if(is_array($add_fields))
            $query .= implode(',',$add_fields).',';
        $query = substr($query,0,-1);//remove last ','
@@ -239,6 +248,7 @@ class FunctionObjMgr
        $query .= " function_obj_id =".$db->parseValue($inst->functionObjId).",";
        $query .= " name =".$db->parseValue($inst->name).",";
        $query .= " desc =".$db->parseValue($inst->desc).",";
+       $query .= " return_type =".$db->parseValue($inst->returnType).",";
        $query = substr($query,0,-1);//remove last ','
        $query .= " where function_obj_id=".$db->parseValue($inst->functionObjId);
        if($db->execute($query,$result))
