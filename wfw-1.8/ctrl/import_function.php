@@ -29,13 +29,14 @@
 class application_import_function_ctrl extends cApplicationCtrl
 {
     // required fields
-    public $fields    = array("doxygen_filename");
+    public $fields    = array("filename","defid");
     
     // optional fields
     public $op_fields = null;
 
     // others data
-    // [put your data here]
+    public $func; // FunctionObj 
+    public $func_params; // FunctionParameter[] 
     
     function __construct()
     {
@@ -46,48 +47,66 @@ class application_import_function_ctrl extends cApplicationCtrl
         // $this->att = array_merge($this->att,$_COOKIE);
         
         // initalize...
-        // [add your initialization code here]
+        $this->func = new FunctionObj();
+        $this->func_params = array();
     }
     
     function main(iApplication $app, $app_path, $p) {
 
         // ouvre le fichier
-        $path = path($app->getCfgValue("application","import_path"), $p->doxygen_filename);
+        $path = path($app->getCfgValue("path","import_path"), $p->filename);
+        if(!file_exists($path))
+            return RESULT(cResult::Failed,cApplication::ResourceNotFound,array("FILE"=>$path));
+
         $doc = new XMLDocument();
         if(!$doc->load($path))
-            return RESULT(cResult::Failed);
+            return RESULT(cResult::Failed,XMLDocument::loadFile,array("FILE"=>$path));
 
-        return RESULT_OK();
-    }
-    
-    function output(iApplication $app, $format, $att, $result)
-    {
-        switch($format)
-        {
-            // HTML output
-            case "text/html":
-                // make from main template
-                $att["system"] = ucwords(strtolower(constant("SYSTEM")));
-                $template = $app->createXMLView("view/pages/home.html",$att);
-                if(!$template)
-                    return false;
-                
-                // ajoute les données de la configuration
-                $doc = new XMLDocument();
-                $doc->appendChild($doc->createElement("data"));
-                foreach($app->getCfg() as $key=>$section){
-                    $sectionNode = $doc->createElement($key);
-                    $doc->documentElement->appendChild($sectionNode);
-                    $doc->appendAssocArray($sectionNode,$section);
-                }
-                $template->push_xml_file('config.xml', $doc);
+        // extrait les données
+        $node = $doc->all("memberdef[kind='function']");
+        foreach( $node as $k=>$n){
+            if($n->getAttribute("id") != $p->defid)
+                continue;
+            //description
+            if(NULL !== ($desc = $doc->one("briefdescription para",$n)))
+                $this->func->desc = $desc->nodeValue;
+            //nom
+            if(NULL !== ($desc = $doc->one("name",$n)))
+                $this->func->name = $desc->nodeValue;
 
-                //sortie
-                return $template->Make();
+            //return
+            //if(NULL !== ($desc = $doc->one("name",$n)))
+            //    $this->func->returnType = $desc->nodeValue;
+            if(NULL !== ($desc = $doc->one("detaileddescription para simplesect[kind='return']",$n)))
+                $this->func->returnDesc = $desc->nodeValue;
+
+            //remark
+            if(NULL !== ($desc = $doc->one("detaileddescription para simplesect[kind='remark']",$n)))
+                $this->func->remark = $desc->nodeValue;
+
+
+            //extrait les paramètres
+            $paramsNodeList = $doc->all("detaileddescription para parameterlist[kind='param'] parameteritem",$n);
+            foreach( $paramsNodeList as $paramKey=>$paramNode){
+                $param = new FunctionParameter();
+                $param->name = $doc->one("parameternamelist parametername",$paramNode)->nodeValue;
+                $param->desc = $doc->one("parameterdescription para",$paramNode)->nodeValue;
+                //$param->dataType = $doc->one("type",$paramNode)->nodeValue;
+                $this->func_params[] = $param;
+            }
+            $paramsNodeList = $doc->all("param",$n);
+            $i=0;
+            foreach( $paramsNodeList as $paramKey=>$paramNode){
+                $this->func_params[$i]->dataType = $doc->one("type",$paramNode)->nodeValue;
+                $this->func_params[$i]->name = $doc->one("defname",$paramNode)->nodeValue;
+                $i++;
+            }
         }
-        
-        // return result if possible
-        return parent::output($app, $format, $att, $result);
+
+        print_r($this->func);
+        print_r($this->func_params);
+        exit;
+        return RESULT_OK();
     }
 };
 

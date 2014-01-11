@@ -31,7 +31,7 @@
         </messages>
         
         <fields>
-            <!-- put your fields texts here -->
+            <filename>Nom de fichier</filename>
         </fields>
     </results>
 </site>
